@@ -1,0 +1,61 @@
+{
+  "name": "whatsapp-sender",
+  "version": "1.0.0",
+  "description": "Auto-send WhatsApp messages from an Excel sheet and update send status",
+  "main": "main.js",
+  "scripts": {
+    "start": "node index.js",
+    "dry-run": "node index.js --dry-run",
+    "ui": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "qrcode": "^1.5.4",
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.34.7"
+  },
+  "devDependencies": {
+    "electron": "^45.2.3",
+    "electron-builder": "^26.18.0"
+  },
+  "build": {
+    "appId": "com.whatsappsender.app",
+    "productName": "WhatsApp Excel Sender",
+    "directories": {
+      "output": "release"
+    },
+    "asar": false,
+    "files": [
+      "**/*",
+      "!.wwebjs_auth/**/*",
+      "!state.json",
+      "!test-plan.md",
+      "!dist/**/*",
+      "!release/**/*",
+      "!.eb-cache/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "C:/Users/ASUS/.cache/puppeteer/chrome/win64-146.0.7680.31/chrome-win64",
+        "to": "chrome"
+      },
+      {
+        "from": "C:/Program Files/nodejs/node.exe",
+        "to": "node.exe"
+      }
+    ],
+    "win": {
+      "target": ["nsis"],
+      "artifactName": "${productName}-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}

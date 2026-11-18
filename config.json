@@ -1,0 +1,22 @@
+{
+  "excel_path": "C:/Users/ASUS/Documents/whatsapp-job-reminder-20261105-110505.xlsx",
+  "sheet_name": "WhatsApp岗位提醒",
+  "columns": {
+    "phone": "WhatsApp Number",
+    "message": "notice_content",
+    "status": "Is it completed?"
+  },
+  "auto_start_record": 201,
+  "sort_column": "Customer Manager",
+  "start_row": null,
+  "end_row": null,
+  "delay_min_sec": 90,
+  "delay_max_sec": 180,
+  "batch_rows": 30,
+  "ack_timeout_sec": 60,
+  "reconnect_poll_sec": 10,
+  "reconnect_max_wait_sec": 300,
+  "connect_timeout_sec": 600,
+  "ready_fallback_sec": 120,
+  "protocol_timeout_sec": 600
+}

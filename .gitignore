@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build output
+release/
+dist/
+.eb-cache/
+
+# WhatsApp session/auth
+.wwebjs_auth/
+
+# Runtime state
+state.json
+
+# Logs
+*.log
+
+# Environment
+.env
